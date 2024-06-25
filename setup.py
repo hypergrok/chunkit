@@ -13,7 +13,7 @@ setup(
    long_description=long_description,
    long_description_content_type='text/markdown',
    author='hypergrok',
-   author_email='173556723+hypergrok@users.noreply.github.com.',
+   author_email='173556723+hypergrok@users.noreply.github.com',
    url='https://github.com/hypergrok/chunkit',
    project_urls={
       'Source Code': 'https://github.com/hypergrok/chunkit'
