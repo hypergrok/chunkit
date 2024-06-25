@@ -8,15 +8,15 @@ with open(os.path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
    name='chunkit',
-   version='0.1.0',
-   description='Convert URLs and files into LLM-friendly text chunks',
+   version='0.1.1',
+   description='Convert URLs into LLM-friendly text chunks',
    long_description=long_description,
    long_description_content_type='text/markdown',
-   author='genaitools',
-   author_email='173556723+genaitools@users.noreply.github.com',
-   url='https://github.com/genaitools/chunkit',
+   author='hypergrok',
+   author_email='173556723+hypergrok@users.noreply.github.com.',
+   url='https://github.com/hypergrok/chunkit',
    project_urls={
-      'Source Code': 'https://github.com/genaitools/chunkit'
+      'Source Code': 'https://github.com/hypergrok/chunkit'
    },
    packages=find_packages(),
    include_package_data=True,
