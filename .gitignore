@@ -68,3 +68,6 @@ target/
 .env
 .venv/
 .env/
+
+# tokens
+token.txt
