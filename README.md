@@ -1,1 +1,1 @@
-Initial readme
+Convert URLs and files into LLM-friendly markdown chunks
