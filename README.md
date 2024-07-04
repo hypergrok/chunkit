@@ -41,10 +41,9 @@ for chunk in chunks:
 
 ### Get API Key
 
-1. Go to [app.chunkit.dev](https://app.chunkit.dev).
-2. Sign up or log in to your account. 
-3. Navigate to Deploy API section.
-4. Generate a new API key.
+1. Go to [app.chunkit.dev](https://app.chunkit.dev) and log in.
+2. Navigate to Deploy API section.
+3. Generate a new API key.
 
 You can also test chunking directly on the website.
 
