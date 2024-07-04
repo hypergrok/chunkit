@@ -29,14 +29,16 @@ from chunkit import Chunker
 chunker = Chunker(api_key='your_api_key_here')
 
 # Define URLs to process
-urls = ["https://en.wikipedia.org/wiki/Chunking", "https://calibre-ebook.com/downloads/demos/demo.docx"]
+urls = ["https://en.wikipedia.org/wiki/Chunking",
+        "https://calibre-ebook.com/downloads/demos/demo.docx"]
 
 # Process the URLs into markdown chunks
-chunks = chunker.process(urls)
+chunkified_urls = chunker.process(urls)
 
 # Output the resulting chunks
-for chunk in chunks:
-    print(chunk)
+for url in chunkified_urls:
+    for chunk in url['chunks']:
+        print(chunk)
 ```
 
 ### Get API Key

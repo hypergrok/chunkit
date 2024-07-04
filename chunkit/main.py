@@ -8,8 +8,10 @@ class Chunker:
         self.headers = {"Authorization": f"Bearer {self.api_key}"}
 
     def process(self, urls):
-        if not isinstance(urls, list):
-            raise ValueError("URLs should be provided as a list.")
+        if isinstance(urls, str):
+            urls = [urls]
+        elif not isinstance(urls, list):
+            raise ValueError("URLs should be provided as a string, or list of strings for batch mode.")
 
         data = {'urls': urls}
         response = requests.post(self.endpoint, json=data, headers=self.headers)
@@ -17,4 +19,4 @@ class Chunker:
         if response.status_code != 200:
             response.raise_for_status()
 
-        return response.json()
+        return response.json().get('chunkified_urls', [])
