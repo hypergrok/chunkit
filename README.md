@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="chn.png" alt="chunkit" width="200"/>
+  <img src="https://raw.githubusercontent.com/hypergrok/chunkit/main/chn.png" alt="chunkit" width="200"/>
 </p>
 
 <div align="center">
