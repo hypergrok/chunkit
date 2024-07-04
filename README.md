@@ -1,7 +1,7 @@
 # chunkit
 
 <p align="center">
-  <img src="chn.png" alt="chunkit" width="200"/>
+  <img src="chn.png" alt="chunkit" width="200" style="filter: invert(100%) brightness(0.8);"/>
 </p>
 
 [![PyPI version](https://badge.fury.io/py/chunkit.svg)](https://badge.fury.io/py/chunkit)
