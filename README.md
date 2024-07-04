@@ -39,10 +39,6 @@ for chunk in chunks:
     print(chunk)
 ```
 
-### Filetypes
-
-Handles HTML, PDF, CSV, JSON, YAML, MD, DOCX.
-
 ### Get API Key
 
 1. Go to [app.chunkit.dev](https://app.chunkit.dev).
@@ -51,6 +47,10 @@ Handles HTML, PDF, CSV, JSON, YAML, MD, DOCX.
 4. Generate a new API key.
 
 You can also test chunking directly on the website.
+
+### Supported files
+
+Handles HTML, PDF, CSV, JSON, YAML, MD, DOCX.
 
 ### License
 
