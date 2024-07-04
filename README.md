@@ -2,9 +2,11 @@
   <img src="chn.png" alt="chunkit" width="200" style="filter: invert(100%) brightness(0.8);"/>
 </p>
 
-[![PyPI version](https://badge.fury.io/py/chunkit.svg)](https://badge.fury.io/py/chunkit)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Downloads](https://pepy.tech/badge/chunkit)](https://pepy.tech/project/chunkit)
+<div align="center">
+  <a href="https://badge.fury.io/py/chunkit"><img src="https://badge.fury.io/py/chunkit.svg" alt="PyPI version" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" /></a>
+  <a href="https://pepy.tech/project/chunkit"><img src="https://pepy.tech/badge/chunkit" alt="Downloads" /></a>
+</div>
 
 ## Convert URLs and files into LLM-friendly markdown chunks
 
