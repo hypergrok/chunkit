@@ -1,25 +1,18 @@
 <p align="center">
-  <img src="chn.png" alt="chunkit" width="200" style="filter: invert(100%) brightness(0.8);"/>
+  <img src="chn.png" alt="chunkit" width="200" style="filter: invert(100%);"/>
 </p>
 
 <div align="center">
   <a href="https://badge.fury.io/py/chunkit"><img src="https://badge.fury.io/py/chunkit.svg" alt="PyPI version" /></a>
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" /></a>
   <a href="https://pepy.tech/project/chunkit"><img src="https://pepy.tech/badge/chunkit" alt="Downloads" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" /></a>
 </div>
 
-## Convert URLs and files into LLM-friendly markdown chunks
+### Turn URLs into LLM-friendly markdown chunks
 
-chunkit transforms URLs into clean markdown chunks which can be used for RAG/LLM applications.
+chunkit transforms URLs into markdown chunks which can be used for RAG/LLM applications.
 
-## Features
-
-- **Easy to Use**: Simple API to convert URLs and files into markdown chunks.
-- **Fast and Efficient**: Optimized for performance.
-- **LLM-Friendly**: Produces chunks that are ideal for LLM processing.
-- **File Support**: Handles HTML, PDF, CSV, JSON, YAML, MD, DOCX.
-
-## Installation
+### Installation
 
 Install chunkit using pip:
 
@@ -27,9 +20,7 @@ Install chunkit using pip:
 pip install chunkit
 ```
 
-## Quick Start
-
-Get started with chunkit in a few lines of code:
+Start chunking:
 
 ```python
 from chunkit import Chunker
@@ -38,9 +29,9 @@ from chunkit import Chunker
 chunker = Chunker(api_key='your_api_key_here')
 
 # Define URLs to process
-urls = ["https://lol.com", "https://calibre-ebook.com/downloads/demos/demo.docx"]
+urls = ["https://en.wikipedia.org/wiki/Chunking", "https://calibre-ebook.com/downloads/demos/demo.docx"]
 
-# Process the URLs into semantic embedding chunks
+# Process the URLs into markdown chunks
 chunks = chunker.process(urls)
 
 # Output the resulting chunks
@@ -48,9 +39,11 @@ for chunk in chunks:
     print(chunk)
 ```
 
-## Getting an API Key
+### Filetypes
 
-To use chunkit, you need an API key:
+Handles HTML, PDF, CSV, JSON, YAML, MD, DOCX.
+
+### Get API Key
 
 1. Go to [app.chunkit.dev](https://app.chunkit.dev).
 2. Sign up or log in to your account. 
@@ -59,14 +52,10 @@ To use chunkit, you need an API key:
 
 You can also test chunking directly on the website.
 
-## License
+### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Contact
+### Contact
 
-For questions or support, please open an issue or contact us at support@chunkit.dev.
-
----
-
-Happy chunking!
+For questions or support, please open an issue.
