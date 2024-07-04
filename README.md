@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="chn.png" alt="chunkit" width="200" style="filter: invert(100%);"/>
-</p>
+# <p align="center" style="font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 52pt;">chunkit.</p>
 
 <div align="center">
   <a href="https://badge.fury.io/py/chunkit"><img src="https://badge.fury.io/py/chunkit.svg" alt="PyPI version" /></a>
