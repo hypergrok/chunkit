@@ -1,5 +1,5 @@
-<p align="center" style="background-color: gray;">
-  <img src="chn.png" alt="chunkit" width="200" />
+<p align="center">
+  <img src="chn.png" alt="chunkit" width="200"/>
 </p>
 
 <div align="center">
