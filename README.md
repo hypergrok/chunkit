@@ -38,19 +38,18 @@ for url in chunkified_urls:
     for chunk in url['chunks']:
         print(chunk)
 ```
-
+Example results:
 ```markdown
-CHUNK 1:
 ### Chunking (psychology)
 
 In cognitive psychology, **chunking** is a process by which small individual pieces of a set of information are bound together to create a meaningful whole later on in memory. The chunks, by which the information is grouped, are meant to improve short-term retention of the material, thus bypassing the limited capacity of working memory...
-
-CHUNK 2:
+```
+```markdown
 ### Modality effect
 
 A modality effect is present in chunking. That is, the mechanism used to convey the list of items to the individual affects how much "chunking" occurs. Experimentally, it has been found that auditory presentation results in a larger amount of grouping in the responses of individuals than visual presentation does...
-
-CHUNK 3:
+```
+```markdown
 ### Memory training systems, mnemonic
 
 Various kinds of memory training systems and mnemonics include training and drills in specially-designed recoding or chunking schemes. Such systems existed before Miller's paper, but there was no convenient term to describe the general strategy and no substantive and reliable research...
