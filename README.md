@@ -8,7 +8,7 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" /></a>
 </div>
 
-<h2 align="center">Turn URLs into LLM-friendly markdown chunks</h2>
+<p align="center" style="font-size: 24px; font-weight: bold;">Turn URLs into LLM-friendly markdown chunks</p>
 
 ### Installation
 
