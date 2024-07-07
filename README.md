@@ -24,18 +24,20 @@ Start chunking:
 from chunkit import Chunker
 
 # Initialize the Chunker with your API key
-chunker = Chunker(api_key='your_api_key_here')
+chunker = Chunker(api_key="your-api-key-here")
 
 # Define URLs to process
-urls = ["https://en.wikipedia.org/wiki/Chunking",
+urls = ["https://en.wikipedia.org/wiki/Chunking_(psychology)",
         "https://calibre-ebook.com/downloads/demos/demo.docx"]
 
 # Process the URLs into markdown chunks
 chunkified_urls = chunker.process(urls)
 
 # Output the resulting chunks
-for url in chunkified_urls:
-    for chunk in url['chunks']:
+for item in chunkified_urls:
+    print(f"---------------- Chunking url: {item['url']} ----------------")
+    for idx, chunk in enumerate(item['chunks']):
+        print(f"-------- Chunk number {idx} --------")
         print(chunk)
 ```
 Example results:
