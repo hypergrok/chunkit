@@ -27,16 +27,16 @@ from chunkit import Chunker
 chunker = Chunker(api_key="your-api-key-here")
 
 # Define URLs to process
-urls = ["https://en.wikipedia.org/wiki/Chunking_(psychology)",
-        "https://calibre-ebook.com/downloads/demos/demo.docx"]
+urls = ["https://en.wikipedia.org/wiki/Chunking_(psychology)"]
 
 # Process the URLs into markdown chunks
 chunkified_urls = chunker.process(urls)
 
 # Output the resulting chunks
 for item in chunkified_urls:
-    for idx, chunk in enumerate(item['chunks']):
-        print(f"URL: {item['url']}, Chunk number: {idx}\n{chunk}")
+    for chunk in item['chunks']:
+        print("-"*64)
+        print(chunk)
 ```
 Example results:
 ```markdown
