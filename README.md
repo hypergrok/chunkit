@@ -35,10 +35,8 @@ chunkified_urls = chunker.process(urls)
 
 # Output the resulting chunks
 for item in chunkified_urls:
-    print(f"---------------- Chunking url: {item['url']} ----------------")
     for idx, chunk in enumerate(item['chunks']):
-        print(f"-------- Chunk number {idx} --------")
-        print(chunk)
+        print(f"URL: {item['url']}, Chunk number: {idx}\n{chunk}")
 ```
 Example results:
 ```markdown
