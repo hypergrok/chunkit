@@ -23,6 +23,6 @@ setup(
    packages=find_packages(),
    include_package_data=True,
    install_requires=[
-      'requests', 'html2text', 'beautifulsoup4'
+      'requests', 'html2text', 'beautifulsoup4', 'toml'
    ]
 )
