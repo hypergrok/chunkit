@@ -49,6 +49,7 @@ class Chunker:
 
     @staticmethod
     def get_fingerprint():
+        # Info to be hashed
         stable_info = (
             platform.system(),
             platform.machine(),
