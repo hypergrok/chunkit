@@ -15,12 +15,12 @@ from collections import Counter
 
 class Chunker:
     def __init__(self, api_key=None):
-        self.api_key = api_key  # Used only for Plus mode
-        self.endpoint = "https://app.chunkit.dev/api/v1/chunk"
-        self.headers = {"Authorization": f"Bearer {self.api_key}"}
         self.config = toml.load("./config.toml")
         # optional anonymized usage stats
         self.session_id = self.get_session_id() if self.config['settings']['gather_usage_stats'] else 'no_sessionid'
+        self.api_key = api_key  # Used only for Plus mode
+        self.endpoint = "https://app.chunkit.dev/api/v1/chunk"
+        self.headers = {"Authorization": f"Bearer {self.api_key}"}
 
     def process(self, urls):
         if isinstance(urls, str):
@@ -53,7 +53,7 @@ class Chunker:
             chunks.pop(0)
         return chunks
 
-    def get_chunks(self, urls):  # ToDo: Test it
+    def get_chunks(self, urls):
         chunkified_urls = []
         for url in urls:
             chunk_obj = {}
@@ -61,7 +61,7 @@ class Chunker:
                 url_path = urlparse(url).path
                 ext, ctype = os.path.splitext(url_path)[1], mimetypes.guess_type(url_path)[0]
                 if not ctype.startswith("htm") or not ext.startswith(".htm"):
-                    err = "Can only scrape HTML in Chunkit Core - get API key for Chunkit Plus for more filetypes."
+                    err = "Can only scrape HTML in Chunkit Core - get API key at app.chunkit.dev for more filetypes."
                     raise ValueError(err)
                 body = urlopen(Request(url=url)).read().decode(errors="ignore")
                 soup = BeautifulSoup(body, 'html.parser')
@@ -88,8 +88,8 @@ class Chunker:
 
     @staticmethod
     def get_session_id():
-        # Info to be hashed
-        stable_info = (platform.system(), platform.machine(), platform.processor(), uuid.getnode())
-        unique_string = ''.join(map(str, stable_info))
-        sessionid = hashlib.sha256(unique_string.encode()).hexdigest()
-        return sessionid
+        # Anonymized but semi-persistent info
+        persistent_info = (platform.system(), platform.machine(), platform.processor(), uuid.getnode())
+        unique_string = ''.join(map(str, persistent_info))
+        anonymous_session_id = hashlib.sha256(unique_string.encode()).hexdigest()
+        return anonymous_session_id
