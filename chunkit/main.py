@@ -1,26 +1,35 @@
 import requests
 import html2text
 from bs4 import BeautifulSoup
-from urllib.parse import urlparse
 import hashlib
 import platform
-import mimetypes
 import uuid
 import toml
 import os
 import re
+import traceback
+import mimetypes
+from urllib.parse import urlparse
 from urllib.request import urlopen, Request
 from collections import Counter
 
 
 class Chunker:
     def __init__(self, api_key=None):
-        self.config = toml.load("./config.toml")
+        project_root_config = os.path.join(os.getcwd(), "config.toml")
+        package_default_config = os.path.join(os.path.dirname(__file__), "config.toml")
+
+        if os.path.exists(project_root_config):
+            self.config = toml.load(project_root_config)
+        else:
+            self.config = toml.load(package_default_config)
         # optional anonymized usage stats
         self.session_id = self.get_session_id() if self.config['settings']['gather_usage_stats'] else 'no_sessionid'
-        self.api_key = api_key  # Used only for Plus mode
+        self.api_key = api_key  # For developers who want to use Plus mode
         self.endpoint = "https://app.chunkit.dev/api/v1/chunk"
         self.headers = {"Authorization": f"Bearer {self.api_key}"}
+        self.core_mode = False if self.api_key else True
+        self.local_only_mode = self.config['settings']['local_only_mode']
 
     def process(self, urls):
         if isinstance(urls, str):
@@ -28,13 +37,10 @@ class Chunker:
         elif not isinstance(urls, list):
             raise ValueError("URLs should be provided as a string, or list of strings for batch mode.")
 
-        core_mode = False if self.api_key else True
-        local_only_mode = self.config['settings']['local_only_mode']
-
-        if local_only_mode:
+        if self.local_only_mode:
             chunks = self.get_chunks(urls)
         else:
-            determined_headers = {} if core_mode else {self.headers}
+            determined_headers = {} if self.core_mode else self.headers
             data = {'urls': urls, 'session_id': self.session_id}
             response = requests.post(self.endpoint, json=data, headers=determined_headers)
 
@@ -60,8 +66,10 @@ class Chunker:
             try:
                 url_path = urlparse(url).path
                 ext, ctype = os.path.splitext(url_path)[1], mimetypes.guess_type(url_path)[0]
-                if not ctype.startswith("htm") or not ext.startswith(".htm"):
-                    err = "Can only scrape HTML in Chunkit Core - get API key at app.chunkit.dev for more filetypes."
+                if ctype is None or ext.startswith(".htm"):  # Fallback
+                    ctype = "text/html"
+                if "html" not in ctype:
+                    err = "Can only scrape HTML with Chunkit Core - for more filetypes, get API key at app.chunkit.dev"
                     raise ValueError(err)
                 body = urlopen(Request(url=url)).read().decode(errors="ignore")
                 soup = BeautifulSoup(body, 'html.parser')
@@ -80,7 +88,9 @@ class Chunker:
                     'chunks': chunks
                 }
             except Exception as e:
-                errobj = {"message": e, "type": type(e).__name__}
+                if self.config['settings'].get('verbose', False):
+                    print(traceback.format_exc())
+                errobj = {"message": str(e), "type": type(e).__name__}
                 chunk_obj = {'heading': "", 'url': "", 'success': False, "error": errobj}
             finally:
                 chunkified_urls.append(chunk_obj)

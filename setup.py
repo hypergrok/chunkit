@@ -10,7 +10,7 @@ with open(os.path.join(this_dir, 'README.md'), encoding='utf-8') as f:
 
 setup(
    name='chunkit',
-   version='0.2.0',
+   version='0.2.1',
    description='Convert URLs and files into LLM-friendly markdown chunks',
    long_description=long_desc,
    long_description_content_type='text/markdown',
@@ -22,6 +22,9 @@ setup(
    },
    packages=find_packages(),
    include_package_data=True,
+   package_data={
+      'chunkit': ['config.toml'],
+   },
    install_requires=[
       'requests', 'html2text', 'beautifulsoup4', 'toml'
    ]
