@@ -25,34 +25,20 @@ class Chunker:
             self.config = toml.load(package_default_config)
         # optional anonymized usage stats
         self.session_id = self.get_session_id() if self.config['settings']['gather_usage_stats'] else 'no_sessionid'
-        self.api_key = api_key  # For developers who want to use Plus mode
+        self.api_key = api_key  # For developers who want more functionality than Core mode
         self.endpoint = "https://app.chunkit.dev/api/v1/chunk"
         self.headers = {"Authorization": f"Bearer {self.api_key}"}
         self.core_mode = False if self.api_key else True
         self.local_only_mode = self.config['settings']['local_only_mode']
 
-    def process(self, urls):
-        if isinstance(urls, str):
-            urls = [urls]
-        elif not isinstance(urls, list):
-            raise ValueError("URLs should be provided as a string, or list of strings for batch mode.")
-
-        if self.local_only_mode:
-            chunks = self.get_chunks(urls)
-        else:
-            determined_headers = {} if self.core_mode else self.headers
-            data = {'urls': urls, 'session_id': self.session_id}
-            response = requests.post(self.endpoint, json=data, headers=determined_headers)
-
-            if response.status_code != 200:
-                response.raise_for_status()
-
-            chunks = response.json().get('chunkified_urls', [])
-        return chunks
-
     @staticmethod
     def split_into_chunks(markdown):
+        if markdown == "" or markdown is None:
+            return []
         headers = re.findall(r'^(#{1,5})\s', markdown, re.MULTILINE)
+        if len(headers) < 1:
+            print("Warning: Could not find well-formatted markdown headers - returning full markdown")
+            return [markdown]
         most_common_header = Counter(headers).most_common(1)[0][0]
         chunks = re.split(rf'(?=^{most_common_header}\s)', markdown, flags=re.MULTILINE)
         if chunks[0].strip() == '':
@@ -95,6 +81,25 @@ class Chunker:
             finally:
                 chunkified_urls.append(chunk_obj)
         return chunkified_urls
+
+    def process(self, urls):
+        if isinstance(urls, str):
+            urls = [urls]
+        elif not isinstance(urls, list):
+            raise ValueError("URLs should be provided as a string, or list of strings for batch mode.")
+
+        if self.local_only_mode:
+            chunks = self.get_chunks(urls)
+        else:
+            determined_headers = {} if self.core_mode else self.headers
+            data = {'urls': urls, 'session_id': self.session_id}
+            response = requests.post(self.endpoint, json=data, headers=determined_headers)
+
+            if response.status_code != 200:
+                response.raise_for_status()
+
+            chunks = response.json().get('chunkified_urls', [])
+        return chunks
 
     @staticmethod
     def get_session_id():

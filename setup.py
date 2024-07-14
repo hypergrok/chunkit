@@ -10,7 +10,7 @@ with open(os.path.join(this_dir, 'README.md'), encoding='utf-8') as f:
 
 setup(
    name='chunkit',
-   version='0.2.1',
+   version='0.2.2',
    description='Convert URLs and files into LLM-friendly markdown chunks',
    long_description=long_desc,
    long_description_content_type='text/markdown',
