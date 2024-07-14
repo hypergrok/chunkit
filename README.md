@@ -57,7 +57,7 @@ Various kinds of memory training systems and mnemonics include training and dril
 
 ### Chunkit Core
 
-Chunkit Core will be free forever and handles only HTML. For further filetypes use Chunkit Plus
+Chunkit Core will be free OSS forever and handles only HTML. For further filetypes use Chunkit Plus
 
 ### Chunkit Plus
 
@@ -66,10 +66,11 @@ Chunkit Plus allows you to chunk further filetypes: PDF, CSV, JSON, YAML, MD and
 1. Go to [app.chunkit.dev](https://app.chunkit.dev) and log in.
 2. Navigate to Deploy API section.
 3. Generate a new API key.
-4. For usage, use the same steps as above, but initialize the chunker with your api key:
+4. Same usage as above, but initialize Chunker with API key:
 
 ```python
 from chunkit import Chunker
+
 # Initialize the Chunker
 chunker = Chunker(api_key='your-api-key-here')
 ```
