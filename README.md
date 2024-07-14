@@ -10,7 +10,7 @@
 
 <h3 align="center">Turn URLs into LLM-friendly markdown chunks</h3>
 
-Install with pip:
+Install:
 
 ```bash
 pip install chunkit
