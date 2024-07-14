@@ -10,9 +10,7 @@
 
 <h3 align="center">Turn URLs into LLM-friendly markdown chunks</h3>
 
-### Installation
-
-Install chunkit using pip:
+Install with pip:
 
 ```bash
 pip install chunkit
@@ -23,8 +21,8 @@ Start chunking:
 ```python
 from chunkit import Chunker
 
-# Initialize the Chunker with your API key
-chunker = Chunker(api_key="your-api-key-here")
+# Initialize the Chunker
+chunker = Chunker()
 
 # Define URLs to process
 urls = ["https://en.wikipedia.org/wiki/Chunking_(psychology)"]
@@ -34,9 +32,11 @@ chunkified_urls = chunker.process(urls)
 
 # Output the resulting chunks
 for item in chunkified_urls:
-    for chunk in item['chunks']:
-        print("-"*64)
-        print(chunk)
+    print(f"Chunking for url {item['url']} successful: {item['success']}")
+    if item['success']:
+        for chunk in item['chunks']:
+            print("-"*64)
+            print(chunk[:100]+'...')
 ```
 Example results:
 ```markdown
@@ -55,22 +55,29 @@ A modality effect is present in chunking. That is, the mechanism used to convey 
 Various kinds of memory training systems and mnemonics include training and drills in specially-designed recoding or chunking schemes. Such systems existed before Miller's paper, but there was no convenient term to describe the general strategy and no substantive and reliable research...
 ```
 
-### Get API Key
+### Chunkit Core
+
+Chunkit Core will be free forever and handles only HTML. For further filetypes use Chunkit Plus
+
+### Chunkit Plus
+
+Chunkit Plus allows you to chunk further filetypes: PDF, CSV, JSON, YAML, MD and DOCX.
 
 1. Go to [app.chunkit.dev](https://app.chunkit.dev) and log in.
 2. Navigate to Deploy API section.
 3. Generate a new API key.
+4. For usage, use the same steps as above, but initialize the chunker with your api key:
 
-You can also test chunking directly on the web app.
-
-### Supported files
-
-Handles HTML, PDF, CSV, JSON, YAML, MD, DOCX.
+```python
+from chunkit import Chunker
+# Initialize the Chunker
+chunker = Chunker(api_key='your-api-key-here')
+```
 
 ### License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under AGPL v3 - see the [LICENSE](LICENSE) file for details.
 
 ### Contact
 
-For questions or support, please open an issue.
+For questions or support, please open an issue. 

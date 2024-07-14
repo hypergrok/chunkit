@@ -78,7 +78,7 @@ class Chunker:
                 if self.config['settings'].get('verbose', False):
                     print(traceback.format_exc())
                 errobj = {"message": str(e), "type": type(e).__name__}
-                chunk_obj = {'heading': "", 'url': "", 'success': False, "error": errobj}
+                chunk_obj = {'heading': "", 'url': url, 'success': False, "error": errobj}
             finally:
                 chunkified_urls.append(chunk_obj)
         return chunkified_urls
