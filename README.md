@@ -57,7 +57,7 @@ Various kinds of memory training systems and mnemonics include training and dril
 
 ### Chunkit Core
 
-Chunkit Core is free OSS and handles only HTML. For further filetypes use Chunkit Plus
+Chunkit Core is free OSS and handles only HTML. For further filetypes use Chunkit Plus.
 
 ### Chunkit Plus
 
@@ -74,7 +74,7 @@ from chunkit import Chunker
 # Initialize the Chunker
 chunker = Chunker(api_key='your-api-key-here')
 ```
-
+That's it! Enjoy chunking.
 ### License
 
 This project is licensed under AGPL v3 - see the [LICENSE](LICENSE) file for details.
