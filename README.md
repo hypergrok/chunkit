@@ -57,7 +57,7 @@ Various kinds of memory training systems and mnemonics include training and dril
 
 ### Chunkit Core
 
-Chunkit Core will be free OSS forever and handles only HTML. For further filetypes use Chunkit Plus
+Chunkit Core is free OSS and handles only HTML. For further filetypes use Chunkit Plus
 
 ### Chunkit Plus
 
