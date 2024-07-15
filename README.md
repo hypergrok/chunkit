@@ -65,6 +65,13 @@ This free open source package primarily chunks webpages/html. For more filetypes
 
 Chunkit Plus allows you to chunk more filetypes: PDF, CSV, JSON, YAML, MD and DOCX.
 
+Chunkit Plus also offers a number of improvements:
+
+* Improved chunking algorithms
+* Captures javascript-rendered content
+* Automatic noise-removal
+* Automatic retries
+
 To use Chunkit Plus you need an API key:
 
 1. Go to [app.chunkit.dev](https://app.chunkit.dev) and log in.
