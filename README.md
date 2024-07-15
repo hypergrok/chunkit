@@ -61,7 +61,7 @@ Various kinds of memory training systems and mnemonics include training and dril
 
 This free open source package primarily chunks webpages and html.
 
-Use Chunkit Plus to access more filetypes, and to support the development of this package.
+To access more filetypes, and to support the development of this package - use Chunkit Plus.
 
 ### Chunkit Plus
 
@@ -84,7 +84,7 @@ To use Chunkit Plus an API key is needed:
 ```python
 from chunkit import Chunker
 
-# Initialize the Chunker
+# Initialize the Chunker with API key
 chunker = Chunker(api_key='your-api-key-here')
 ```
 That's it! The rest works as the example above.
