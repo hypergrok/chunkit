@@ -59,9 +59,9 @@ Various kinds of memory training systems and mnemonics include training and dril
 
 ### Supported filetypes
 
-This free open source package primarily chunks webpages/html. 
+This free open source package primarily chunks webpages and html.
 
-For more filetypes, and to support the development of this package, there is Chunkit Plus.
+For more filetypes, and to support the development of this package, you can use Chunkit Plus.
 
 ### Chunkit Plus
 
@@ -74,7 +74,7 @@ Chunkit Plus also offers a number of improvements:
 * Supports automatic noise-removal
 * Performs automatic retries
 
-To use Chunkit Plus you need an API key:
+To use Chunkit Plus an API key is needed:
 
 1. Go to [app.chunkit.dev](https://app.chunkit.dev) and log in.
 2. Navigate to Deploy API section.
