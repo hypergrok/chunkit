@@ -57,9 +57,9 @@ A modality effect is present in chunking. That is, the mechanism used to convey 
 Various kinds of memory training systems and mnemonics include training and drills in specially-designed recoding or chunking schemes. Such systems existed before Miller's paper, but there was no convenient term to describe the general strategy and no substantive and reliable research...
 ```
 
-### Chunkit Core
+### Supported filetypes
 
-Chunkit Core is free open source software which handles HTML chunking. To chunk more types of files, you can use Chunkit Plus.
+This free open source package primarily chunks webpages/html. For more filetypes, there is Chunkit Plus.
 
 ### Chunkit Plus
 
