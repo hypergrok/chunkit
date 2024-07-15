@@ -59,7 +59,9 @@ Various kinds of memory training systems and mnemonics include training and dril
 
 ### Supported filetypes
 
-This free open source package primarily chunks webpages/html. For more filetypes, there is Chunkit Plus.
+This free open source package primarily chunks webpages/html. 
+
+For more filetypes, and to support the development of this package, there is Chunkit Plus.
 
 ### Chunkit Plus
 
@@ -67,10 +69,10 @@ Chunkit Plus allows you to chunk more filetypes: PDF, CSV, JSON, YAML, MD and DO
 
 Chunkit Plus also offers a number of improvements:
 
-* Improved chunking algorithms
 * Captures javascript-rendered content
-* Automatic noise-removal
-* Automatic retries
+* Uses improved chunking algorithms
+* Supports automatic noise-removal
+* Performs automatic retries
 
 To use Chunkit Plus you need an API key:
 
