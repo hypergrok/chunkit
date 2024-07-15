@@ -59,7 +59,7 @@ Various kinds of memory training systems and mnemonics include training and dril
 
 ### Chunkit Core
 
-Chunkit Core is free open source software which handles HTML chunking. For other filetypes there is Chunkit Plus.
+Chunkit Core is free open source software which handles HTML chunking. To chunk more types of files, you can use Chunkit Plus.
 
 ### Chunkit Plus
 
