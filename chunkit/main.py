@@ -101,7 +101,9 @@ class Chunker:
             else:
                 chunks = response.json().get('chunkified_urls', [])
         for item in chunks:
-            print(f"Chunking for url {item['url']} successful: {item['success']}")
+            logline = f"Chunking for url {item['url']} successful: {item['success']}"
+            logline += "" if item['success'] else f", due to: {item['error']}"
+            print(logline)
         return chunks
 
     @staticmethod
