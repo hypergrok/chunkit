@@ -96,10 +96,12 @@ class Chunker:
             data = {'urls': urls, 'session_id': self.session_id}
             response = requests.post(self.endpoint, json=data, headers=determined_headers)
 
-            if response.status_code != 200:
-                response.raise_for_status()
-
-            chunks = response.json().get('chunkified_urls', [])
+            if response.status_code == 503:  # Fallback
+                chunks = self.get_chunks(urls)
+            else:
+                if response.status_code != 200:
+                    response.raise_for_status()
+                chunks = response.json().get('chunkified_urls', [])
         for item in chunks:
             print(f"Chunking for url {item['url']} successful: {item['success']}")
         return chunks

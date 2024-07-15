@@ -10,7 +10,7 @@
 
 <h3 align="center">Turn URLs into LLM-friendly markdown chunks</h3>
 
-Chunkit allows you to scrape and convert webpages into markdown chunks suitable for RAG applications.
+Chunkit allows you to scrape and convert webpages into markdown chunks, for RAG/LLM applications.
 
 ### Getting started
 
