@@ -10,7 +10,7 @@
 
 <h3 align="center">Turn URLs into LLM-friendly markdown chunks</h3>
 
-This tool allows you to scrape and convert webpages into markdown chunks suitable for RAG applications.
+Chunkit allows you to scrape and convert webpages into markdown chunks suitable for RAG applications.
 
 Get started in two steps:
 
@@ -35,10 +35,9 @@ urls = ["https://en.wikipedia.org/wiki/Chunking_(psychology)"]
 chunkified_urls = chunker.process(urls)
 
 # Output the resulting chunks
-for item in chunkified_urls:
-    print(f"Chunking for url {item['url']} successful: {item['success']}")
-    if item['success']:
-        for chunk in item['chunks']:
+for url in chunkified_urls:
+    if url['success']:
+        for chunk in url['chunks']:
             print("-"*64)
             print(chunk[:100]+'...')
 ```
@@ -61,16 +60,18 @@ Various kinds of memory training systems and mnemonics include training and dril
 
 ### Chunkit Core
 
-Chunkit Core is free OSS and handles only HTML. For further filetypes use Chunkit Plus.
+Chunkit Core is free open source software which handles primarily HTML. For more filetypes there is Chunkit Plus.
 
 ### Chunkit Plus
 
-Chunkit Plus allows you to chunk further filetypes: PDF, CSV, JSON, YAML, MD and DOCX.
+Chunkit Plus allows you to chunk more filetypes: PDF, CSV, JSON, YAML, MD and DOCX.
+
+To use Chunkit Plus:
 
 1. Go to [app.chunkit.dev](https://app.chunkit.dev) and log in.
 2. Navigate to Deploy API section.
 3. Generate a new API key.
-4. Same usage as above, but initialize Chunker with API key:
+4. Initialize Chunker with API key:
 
 ```python
 from chunkit import Chunker
@@ -78,7 +79,7 @@ from chunkit import Chunker
 # Initialize the Chunker
 chunker = Chunker(api_key='your-api-key-here')
 ```
-That's it! Enjoy chunking.
+That's it! The rest works as the example above. Enjoy chunking.
 ### License
 
 This project is licensed under AGPL v3 - see the [LICENSE](LICENSE) file for details.

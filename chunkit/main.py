@@ -100,6 +100,8 @@ class Chunker:
                 response.raise_for_status()
 
             chunks = response.json().get('chunkified_urls', [])
+        for item in chunks:
+            print(f"Chunking for url {item['url']} successful: {item['success']}")
         return chunks
 
     @staticmethod
