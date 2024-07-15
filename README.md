@@ -12,15 +12,15 @@
 
 Chunkit allows you to scrape and convert webpages into markdown chunks suitable for RAG applications.
 
-Get started in two steps.
+Get started in two steps:
 
-1) Install:
+1) Install
 
 ```bash
 pip install chunkit
 ```
 
-2) Start chunking:
+2) Start chunking
 
 ```python
 from chunkit import Chunker
