@@ -1,4 +1,4 @@
 [settings]
 local_only_mode = false
 gather_usage_stats = true
-verbose = false
+verbose = true
