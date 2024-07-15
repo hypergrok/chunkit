@@ -74,7 +74,7 @@ Chunkit Plus also offers a number of improvements:
 * Supports automatic noise-removal
 * Performs automatic retries
 
-To use Chunkit Plus an API key is needed:
+To use Chunkit Plus, you need an API key:
 
 1. Go to [app.chunkit.dev](https://app.chunkit.dev) and log in.
 2. Navigate to Deploy API section.
