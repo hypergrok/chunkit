@@ -61,7 +61,7 @@ Various kinds of memory training systems and mnemonics include training and dril
 
 This free open source package primarily chunks webpages and html.
 
-Use Chunkit Plus to access more filetypes - and to support the development of this package.
+Use Chunkit Plus to access more filetypes, and to support the development of this package.
 
 ### Chunkit Plus
 
