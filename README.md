@@ -38,8 +38,7 @@ chunkified_urls = chunker.process(urls)
 for url in chunkified_urls:
     if url['success']:
         for chunk in url['chunks']:
-            print("-"*64)
-            print(chunk[:100]+'...')
+            print(chunk)
 ```
 Example results:
 ```markdown
