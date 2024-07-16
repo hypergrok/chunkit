@@ -90,7 +90,7 @@ chunker = Chunker(api_key='your-api-key-here')
 That's it! The rest works as the example above.
 ### License
 
-This project is licensed under AGPL v3 - see the [LICENSE](LICENSE) file for details.
+This project is licensed under GPL v3 - see the [LICENSE](LICENSE) file for details.
 
 ### Contact
 
