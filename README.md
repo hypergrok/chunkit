@@ -69,9 +69,9 @@ Etc.
 
 ### How most chunkers work
 
-Most chunkers work like this:
+Most chunkers:
 
-* They perform a naive chunking based on the number of words in the content.
+* Perform a naive chunking based on the number of words in the content.
 * For example, they may split content every 200 words, and have a 30 word overlap between each.
 * This leads to messy chunks that are noisy and have unnecessary extra data.
 * Additionally the chunk sentences are usually split in the middle, with lost meaning.
