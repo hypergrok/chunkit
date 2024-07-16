@@ -42,7 +42,7 @@ for url in chunkified_urls:
 ```
 
 <details>
-  <summary>Example results:</summary>
+  <summary>Example results</summary>
 
 Chunk 1:
 ```markdown
