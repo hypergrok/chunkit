@@ -74,8 +74,8 @@ Most chunkers:
 * Perform a naive chunking based on the number of words in the content.
 * For example, they may split content every 200 words, and have a 30 word overlap between each.
 * This leads to messy chunks that are noisy and have unnecessary extra data.
-* Additionally the chunk sentences are usually split in the middle, with lost meaning.
-* This leads to poor RAG/LLM performance with incorrect answers.
+* Additionally, the chunked sentences are usually split in the middle, with lost meaning.
+* This leads to poor LLM performance, with incorrect answers and hallucinations.
 
 ### Why Chunkit works better
 
@@ -100,11 +100,11 @@ Chunkit Plus allows you to chunk more filetypes: PDF, CSV, JSON, YAML, MD and DO
 
 Chunkit Plus also offers a number of improvements:
 
-* Captures javascript-rendered content
-* Uses improved chunking algorithms
-* Can optionally generate Q&A pairs
-* Supports automatic noise-removal
-* Performs automatic retries
+* Captures javascript-rendered content.
+* Uses improved chunking algorithms.
+* Can optionally generate Q&A pairs.
+* Supports automatic noise-removal.
+* Performs automatic retries.
 
 To use Chunkit Plus, you need an API key:
 
