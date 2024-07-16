@@ -40,34 +40,47 @@ for url in chunkified_urls:
         for chunk in url['chunks']:
             print(chunk)
 ```
-### Example results
-Page 1, Chunk 1:
+### Example results for above Wikipedia page:
+Chunk 1:
 ```markdown
 ### Chunking (psychology)
 
 In cognitive psychology, **chunking** is a process by which small individual pieces of a set of information are bound together to create a meaningful whole later on in memory. The chunks, by which the information is grouped, are meant to improve short-term retention of the material, thus bypassing the limited capacity of working memory...
 ```
-Page 1, Chunk 2:
+Chunk 2:
 ```markdown
 ### Modality effect
 
 A modality effect is present in chunking. That is, the mechanism used to convey the list of items to the individual affects how much "chunking" occurs. Experimentally, it has been found that auditory presentation results in a larger amount of grouping in the responses of individuals than visual presentation does...
 ```
-Page 1, Chunk 3:
+Chunk 3:
 ```markdown
 ### Memory training systems, mnemonic
 
 Various kinds of memory training systems and mnemonics include training and drills in specially-designed recoding or chunking schemes. Such systems existed before Miller's paper, but there was no convenient term to describe the general strategy and no substantive and reliable research...
 ```
-And so on..
+Etc.
 
-### How it works
+### How most chunkers work
 
-Placehodler.
+Most chunkers work like this:
 
-### Why it's better than other chunking algorithms
+* They perform a naive chunking based on the number of words in the content.
+* For example, they may split content every 200 words, and have a 30 word overlap between each.
+* This leads to messy chunks that are noisy and have unnecessary extra data.
+* Additionally the chunk sentences are usually split in the middle, with lost meaning.
+* This leads to poor RAG/LLM performance with incorrect answers.
 
-Placehodler.
+### Why Chunkit works better
+
+Chunkit however, converts HTML to Markdown, and then determines split points based on the most common header levels.
+
+This gives you better results because:
+
+* Online content tends to be logically split in paragraphs delimited by headers.
+* By chunking based on headers, this method preserves semantic meaning better.
+* You get a much cleaner, semantically cohesive paragraph of data.
+* You can then use Chunkit to remove noise or extract specific data.
 
 ### Supported filetypes
 
