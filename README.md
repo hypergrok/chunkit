@@ -12,7 +12,7 @@
 
 Chunkit allows you to scrape and convert webpages into markdown chunks, for RAG applications.
 
-### TL;DR: Quickstart
+### Quickstart
 
 1) Install
 
