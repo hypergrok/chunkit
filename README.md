@@ -63,11 +63,11 @@ And so on..
 
 ### How it works
 
-Placehodler
+Placehodler.
 
 ### Why it's better than other chunking algorithms
 
-Placehodler
+Placehodler.
 
 ### Supported filetypes
 
