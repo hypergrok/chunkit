@@ -102,6 +102,7 @@ Chunkit Plus also offers a number of improvements:
 
 * Captures javascript-rendered content
 * Uses improved chunking algorithms
+* Can optionally generate Q&A pairs
 * Supports automatic noise-removal
 * Performs automatic retries
 
